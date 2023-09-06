@@ -35,24 +35,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Custom CSS -->
 
     <link rel="stylesheet" href="css/style.css">
-    
+
     <title>Php-Badwords</title>
 
 </head>
 
 <body>
-<div class="container text-center m-3 d-flex"> 
-<div class="p-3 justify-content-center">
-<form method="POST" action="">
+    <div class="container text-center m-3 d-flex">
+        <div class="p-3 justify-content-center">
+            <form action="process.php" method="post">
+                <label for="paragrafo">Inserisci il paragrafo:</label>
+                <textarea id="paragrafo" name="paragrafo" rows="4" cols="50"></textarea><br><br>
 
-        <label for="testo">Inserisci il testo:</label>
-        <input type="text" name="testo" id="testo"><br>
-        
-        <input class="mt-3" type="submit" value="Censura">
-        
-    </form>
+                <label for="parola_censurare">Parola da censurare:</label>
+                <input type="text" id="parola_censurare" name="parola_censurare"><br><br>
+
+                <input type="submit" value="Invia">
+            </form>
+        </div>
     </div>
-</div>
 </body>
 
 </html>
