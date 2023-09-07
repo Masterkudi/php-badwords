@@ -1,19 +1,4 @@
-<?php
 
-$paroleDaCensurare = array("cazzo", "merda", "troia", "puttana", "fottere", "negro", "ebreo", "fotterlo");
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $testoInserito = $_POST["testo"];
-
-    foreach ($paroleDaCensurare as $parola) {
-        $testoInserito = str_ireplace($parola, "****", $testoInserito);
-    }
-
-    echo "Testo censurato: " . $testoInserito;
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
