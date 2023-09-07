@@ -1,18 +1,16 @@
 <?php
-// Dichiarazione delle parole da censurare come un array
+
 $paroleDaCensurare = array("cazzo", "merda", "troia", "puttana", "fottere", "negro", "ebreo", "fotterlo");
 
-// Verifica se il form è stato inviato
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupera il testo inserito dall'utente
+
     $testoInserito = $_POST["testo"];
 
-    // Sostituisci le parole da censurare con degli asterischi
     foreach ($paroleDaCensurare as $parola) {
         $testoInserito = str_ireplace($parola, "****", $testoInserito);
     }
 
-    // Stampare il testo censurato
     echo "Testo censurato: " . $testoInserito;
 }
 ?>
@@ -41,16 +39,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <div class="container text-center m-3 d-flex">
+    <div class="container text-center m-3 d-flex justify-content-center">
         <div class="p-3 justify-content-center">
             <form action="process.php" method="post">
-                <label for="paragrafo">Inserisci il paragrafo:</label>
-                <textarea id="paragrafo" name="paragrafo" rows="4" cols="50"></textarea><br><br>
+                <label class="d-flex pb-3" for="testo">Inserisci il testo:</label>
+                <textarea id="testo" name="testo" rows="6" cols="50"></textarea><br><br>
 
-                <label for="parola_censurare">Parola da censurare:</label>
-                <input type="text" id="parola_censurare" name="parola_censurare"><br><br>
+                <label class="d-flex pb-3" for="parolaDaCensurare">Parola da censurare:</label>
+                <input class="d-flex" type="text" id="parolaDaCensurare" name="parolaDaCensurare"><br><br>
 
-                <input type="submit" value="Invia">
+                <input class="btn btn-primary m-0 ps-4 pe-4 text-center text-white d-flex" type="submit" value="Invia">
             </form>
         </div>
     </div>
